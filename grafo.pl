@@ -16,7 +16,7 @@ conexion(regina,winnipeg, 4).
 viajar(Origen, Destino, Costo) :-
     conexion(Origen, Destino, Costo). %Caso base
 
-viajar(Origen, Destino, Costo) : -
+viajar(Origen, Destino, Costo) :-
     conexion(Origen, Intermediario, Costo1),
     viajar(Intermediario, Destino, Costo2),
     Costo is Costo1 + Costo2.
