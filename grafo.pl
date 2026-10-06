@@ -17,4 +17,7 @@ viajar(Origen, Destino, Costo) :- %Viajar de Origen a Destino pasando por Interm
     conexion(Origen, Intermediario, Costo_inicial) , conexion(Intermediario, Destino, Costo_intermedio), 
                 Costo is Costo_inicial + Costo_intermedio.
 
-    
+tiene_aristas(Nodo) :-
+    (   conexion(Nodo, _, _)
+    ;   conexion(_, Nodo, _)
+    ).
